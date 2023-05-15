@@ -34,7 +34,7 @@ class Index(View):
             cart[product] = 1
         
         request.session['cart'] = cart
-        print('CART VALUE: ', request.session['cart'])
+        # print('CART VALUE: ', request.session['cart'])
         # print(product)
         return redirect('index')
 
@@ -56,8 +56,8 @@ class Index(View):
             data = {}
             data['products'] = products
             data['categories'] = categories
-            print('CUSTOMER SESSION EMAIL>>', request.session.get('email'))
-            print('CUSTOMER SESSION ID>>', request.session.get('customer_id'))
+            # print('CUSTOMER SESSION EMAIL>>', request.session.get('email'))
+            # print('CUSTOMER SESSION ID>>', request.session.get('customer_id'))
             # print('CUSTOMER SESSION NAME>>', request.session.get('name'))
             return render(request, 'index.html', data)
 

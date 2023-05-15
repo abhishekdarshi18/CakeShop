@@ -10,7 +10,7 @@ urlpatterns = [
     path('signup/', signup, name='signup'),
     path('login/', login, name='login'),
     path('logout', logout, name='logout'),
-    path('cart', Cart.as_view(), name='cart'),
+    path('cart', auth_middleware(Cart.as_view()), name='cart'),
     path('check-out', Checkout.as_view(), name='checkout'),
     path('orders', auth_middleware(Orders.as_view()), name='orders'),
 ]
